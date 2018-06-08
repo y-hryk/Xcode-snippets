@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>autolayout</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>&lt;#view#&gt;.translatesAutoresizingMaskIntoConstraints = NO;
+[&lt;#view#&gt;.leadingAnchor constraintEqualToAnchor:&lt;#view#&gt;.leadingAnchor].active = YES;
+[&lt;#view#&gt;.trailingAnchor constraintEqualToAnchor:&lt;#view#&gt;.trailingAnchor].active = YES;
+
+if (@available(iOS 11.0, *)) {
+    [&lt;#view#&gt;.topAnchor constraintEqualToAnchor:&lt;#view#&gt;.safeAreaLayoutGuide.topAnchor].active = YES;
+    [&lt;#view#&gt;.bottomAnchor constraintEqualToAnchor:&lt;#view#&gt;.safeAreaLayoutGuide.bottomAnchor].active = YES;
+} else {
+    [&lt;#view#&gt;.topAnchor constraintEqualToAnchor:&lt;#view#&gt;.topAnchor].active = YES;
+    [&lt;#view#&gt;.bottomAnchor constraintEqualToAnchor:&lt;#view#&gt;.bottomAnchor].active = YES;
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>02EE9980-50B4-4231-9DB3-0B220AE4A464</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>autolayout_objc</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
