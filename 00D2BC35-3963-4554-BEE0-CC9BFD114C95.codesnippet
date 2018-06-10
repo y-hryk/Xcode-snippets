@@ -6,23 +6,19 @@
 	<string>alertcontroller</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>All</string>
+		<string>CodeExpression</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>  UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
-                                                                           message:message
+	<string>UIAlertController *alertController = [UIAlertController alertControllerWithTitle:&lt;#title#&gt;
+                                                                         message:&lt;#message#&gt;
                                                                     preferredStyle:UIAlertControllerStyleAlert];
   
   [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-    if (completionHandler) {
-      completionHandler();
-    }
+
   }]];
   
   [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-    if (cancelHandler) {
-      cancelHandler();
-    }
+
   }]];
   
     [&lt;#controller#&gt; presentViewController:alertController animated:YES completion:nil];</string>
@@ -35,6 +31,6 @@
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>0</integer>
+	<integer>2</integer>
 </dict>
 </plist>

@@ -3,22 +3,24 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>tableview</string>
+	<string>protocol</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>CodeExpression</string>
+		<string>TopLevel</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>[_tableView registerNib:[UINib nibWithNibName:[&lt;#classname#&gt; class] bundle:nil]forCellReuseIdentifier:&lt;#identifier#&gt;];</string>
+	<string>@protocol &lt;#protocol_name#&gt; &lt;NSObject&gt;
+
+@end</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>19337E35-46CC-43EE-8FDE-14B86B402BD3</string>
+	<string>D3FA2AA3-0FA3-4433-8542-3CEA207ADBCF</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>tableview_registerNib_cell_objc</string>
+	<string>protocol_objc</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>

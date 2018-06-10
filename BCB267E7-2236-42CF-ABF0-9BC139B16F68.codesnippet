@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>indicator</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>@interface &lt;#class#&gt;()
+
+@property (nonatomic, strong) UIView *backView;
+@property (nonatomic, strong) UIActivityIndicatorView *activityIndicator;
+
+@end
+
+@implementation &lt;#class#&gt;
+
++ (&lt;#class#&gt; *)shared {
+    
+    static &lt;#class#&gt; *sharedInstance = nil;
+    static dispatch_once_t onceToken = 0;
+    dispatch_once(&amp;onceToken, ^{
+        sharedInstance = [[&lt;#class#&gt; alloc] init];
+    });
+    return sharedInstance;
+}
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [self setupViews];
+    }
+    return self;
+}
+
+#pragma mark -- private
+- (void)setupViews {
+    
+    CGRect applicationFrame = [UIScreen mainScreen].bounds;
+    self.frame = CGRectMake(0, 0, CGRectGetWidth(applicationFrame), CGRectGetHeight(applicationFrame));
+    
+    _backView = [[UIView alloc]init];
+    _backView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.1];
+    _backView.frame = self.frame;
+    [self addSubview:_backView];
+    
+    _activityIndicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    [self addSubview:_activityIndicator];
+    _activityIndicator.center = self.center;
+    
+    [_activityIndicator startAnimating];
+}
+
+#pragma mark -- public
++ (void)show {
+    [self showInView:[UIApplication sharedApplication].keyWindow];
+}
+
++ (void)showInView:(UIView *)view {
+    
+    &lt;#class#&gt; *indicator = [&lt;#class#&gt; shared];
+    [indicator removeFromSuperview];
+    [view addSubview:indicator];
+    
+    indicator.backView.alpha = 0.0;
+    indicator.activityIndicator.alpha = 0.0;
+    
+    [UIView animateWithDuration:0.45 animations:^{
+        indicator.backView.alpha = 1.0;
+        indicator.activityIndicator.alpha = 1.0;
+    } completion:nil];
+}
+
++ (void)dismiss {
+    
+    &lt;#class#&gt; *view = [&lt;#class#&gt; shared];
+    [UIView animateWithDuration:0.45 animations:^{
+        view.backView.alpha = 0.0;
+        view.activityIndicator.alpha = 0.0;
+    } completion:^(BOOL finished) {
+        [view removeFromSuperview];
+    }];
+}
+
+@end</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>BCB267E7-2236-42CF-ABF0-9BC139B16F68</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>indicator_objc</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
