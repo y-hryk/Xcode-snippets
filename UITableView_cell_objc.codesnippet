@@ -9,7 +9,7 @@
 		<string>CodeExpression</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>[_tableView registerNib:[UINib nibWithNibName:[&lt;#classname#&gt; class] bundle:nil]forCellReuseIdentifier:&lt;#identifier#&gt;];</string>
+	<string>[_tableView registerNib:[UINib nibWithNibName:&lt;#name#&gt; bundle:nil]forCellReuseIdentifier:&lt;#identifier#&gt;];</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>19337E35-46CC-43EE-8FDE-14B86B402BD3</string>
 	<key>IDECodeSnippetLanguage</key>

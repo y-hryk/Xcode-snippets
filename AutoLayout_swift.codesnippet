@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>autolayout</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeExpression</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string> &lt;#view#&gt;.translatesAutoresizingMaskIntoConstraints = false
+        &lt;#view#&gt;.leadingAnchor.constraint(equalTo: &lt;#view#&gt;.leadingAnchor).isActive = true
+        &lt;#view#&gt;.trailingAnchor.constraint(equalTo: &lt;#view#&gt;.trailingAnchor).isActive = true
+        &lt;#view#&gt;.topAnchor.constraint(equalTo: &lt;#view#&gt;.topAnchor).isActive = true
+        
+        if #available(iOS 11.0, *) {
+            &lt;#view#&gt;.bottomAnchor.constraint(equalTo: &lt;#view#&gt;.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        } else {
+            &lt;#view#&gt;.bottomAnchor.constraint(equalTo: &lt;#view#&gt;.bottomAnchor).isActive = true
+        }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>15D014F0-1BA6-42B3-A94D-B13CACBC6F76</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>autolayout_swift</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>

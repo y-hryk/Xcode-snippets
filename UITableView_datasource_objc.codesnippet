@@ -29,6 +29,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"&lt;#cell id#&gt;"];
     
     // Configure the cell...
+    [cell configure:&lt;#model#&gt;];
     
     return cell;
 }</string>

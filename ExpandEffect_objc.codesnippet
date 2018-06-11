@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>expandEffect</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (void)expandEffect:(CGFloat)offset {
+  
+  CGFloat scrollOffset = offset;
+  ImageContainerCell *cell = (ImageContainerCell *)[_collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:_currentIndex inSection:0]];
+  CGSize contentSize = CGSizeMake(self.frame.size.width, self.frame.size.height);
+  
+  if (cell) {
+    
+    _strechImageView.image = cell.imageView.image;
+    _strechImageView.backgroundColor = cell.imageView.backgroundColor;
+    _strechImageView.clipsToBounds = cell.imageView.clipsToBounds;
+    _strechImageView.contentMode = cell.imageView.contentMode;
+    _strechImageView.hidden = !(scrollOffset &lt; 0);
+    
+    if (scrollOffset &lt; 0) {
+      
+      //      _pageControl.alpha = 0.0;
+      _strechImageView.frame = CGRectMake(0, scrollOffset, contentSize.width, contentSize.height - scrollOffset);
+    } else {
+      
+      //      [UIView animateWithDuration:0.3 animations:^{
+      //        _pageControl.alpha = 1.0;
+      //      }];
+      _strechImageView.frame = CGRectMake(0, 0, contentSize.width, contentSize.height);
+    }
+  }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>2A746EAA-F3F7-4AEA-9A43-B339F4EFE3A8</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>expand_effect_objc</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>

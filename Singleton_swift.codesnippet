@@ -3,24 +3,25 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>dispatch_after</string>
+	<string>singleton</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>CodeExpression</string>
+		<string>ClassImplementation</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1.0 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-        
-    });</string>
+	<string> static let shared = &lt;#class#&gt;()
+    private init() {
+        super.init(frame: CGRect.zero)
+    }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>6B76127D-FDAA-4E61-819F-11339E728AFE</string>
+	<string>02788878-1040-4FF9-8D50-6C4F4185B8CA</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>dispatch_after_objc</string>
+	<string>singleton_swift</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>0</integer>
+	<integer>2</integer>
 </dict>
 </plist>

@@ -3,22 +3,27 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>singleton</string>
+	<string>tableview</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>ClassImplementation</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string> static let shared = &lt;#class#&gt;()
-    private init() {
-        super.init(frame: CGRect.zero)
-    }</string>
+	<string>   private var tableView: UITableView = {
+        let view = UITableView(frame: .zero, style: .plain)
+        view.backgroundColor = UIColor.clear
+        view.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
+        view.separatorStyle = .none
+        view.estimatedRowHeight = 100;
+        view.rowHeight = UITableViewAutomaticDimension;
+        return view
+    }()</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>02788878-1040-4FF9-8D50-6C4F4185B8CA</string>
+	<string>AF349426-824F-4764-91FC-0365C7C7CEA7</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>singleton_swift</string>
+	<string>tableview_swift</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

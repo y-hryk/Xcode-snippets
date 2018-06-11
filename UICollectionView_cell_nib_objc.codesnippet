@@ -3,27 +3,19 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>log</string>
+	<string>collectionview</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>TopLevel</string>
+		<string>CodeExpression</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>func LOG(_ obj: Any?, function: String = #function, line: Int = #line) {
-    #if DEBUG
-    guard let unwrapped_obj = obj else {
-        print("[Function:\(function) Line:\(line)] : ")
-        return
-    }
-    print("[Function:\(function) Line:\(line)] : \(unwrapped_obj)")
-    #endif
-}</string>
+	<string>[_collectionView registerNib:[UINib nibWithNibName:&lt;#name#&gt; bundle:nil] forCellWithReuseIdentifier:&lt;#identifier#&gt;];</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>A1655775-CDC6-487E-AA91-13D0A9EC3755</string>
+	<string>55502ECC-21ED-4268-96E2-0E52354FDC8A</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>LOG_swift</string>
+	<string>collectionview_registerNib_cell_objc</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

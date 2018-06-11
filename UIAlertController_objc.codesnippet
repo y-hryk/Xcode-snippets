@@ -12,15 +12,15 @@
 	<string>UIAlertController *alertController = [UIAlertController alertControllerWithTitle:&lt;#title#&gt;
                                                                          message:&lt;#message#&gt;
                                                                     preferredStyle:UIAlertControllerStyleAlert];
-  
+
   [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
 
   }]];
-  
+
   [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
 
   }]];
-  
+
     [&lt;#controller#&gt; presentViewController:alertController animated:YES completion:nil];</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>00D2BC35-3963-4554-BEE0-CC9BFD114C95</string>

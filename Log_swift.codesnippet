@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>log</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>func LOG(_ obj: Any?, function: String = #function, line: Int = #line) {
+    #if DEBUG
+    guard let unwrapped_obj = obj else {
+        print("[Function:\(function) Line:\(line)] : ")
+        return
+    }
+    print("[Function:\(function) Line:\(line)] : \(unwrapped_obj)")
+    #endif
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A1655775-CDC6-487E-AA91-13D0A9EC3755</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>LOG_swift</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
