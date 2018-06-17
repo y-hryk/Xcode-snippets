@@ -3,24 +3,22 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>dispatch_global</string>
+	<string>closure</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>CodeExpression</string>
+		<string>ClassImplementation</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>  DispatchQueue.global(qos: .default).async {
-            
-        }</string>
+	<string>var &lt;#Closure#&gt;: ((String, Double) -&gt; Void)?</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>3BE79B6D-B941-4696-AFED-AB0452CB5DFD</string>
+	<string>99BE42E3-6F82-425D-83FC-AB746B6C6A3C</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>dispatch_global_swift</string>
+	<string>Closure_swift</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>

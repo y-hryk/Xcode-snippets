@@ -3,19 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>tableview</string>
+	<string>navigationbar</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>CodeExpression</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>[_tableView registerNib:[UINib nibWithNibName:[&lt;#classname#&gt; class] bundle:nil]forCellReuseIdentifier:&lt;#identifier#&gt;];</string>
+	<string>   [UINavigationBar appearance].tintColor = [UIColor whiteColor];
+    [UINavigationBar appearance].barTintColor = [UIColor blackColor];
+    [UINavigationBar appearance].titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>19337E35-46CC-43EE-8FDE-14B86B402BD3</string>
+	<string>5E7A56B8-AB21-47B6-ACDC-302BDB8CFB8D</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>tableview_registerNib_cell_objc</string>
+	<string>UINavigationbar_appearance_objc</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

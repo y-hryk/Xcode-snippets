@@ -6,11 +6,28 @@
 	<string>presenter</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>All</string>
+		<string>TopLevel</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>- (instancetype)init __attribute__((unavailable("init is not available")));
-- (instancetype)initWithView:(id&lt;&lt;#view interface#&gt;&gt;)view;</string>
+	<string>@protocol &lt;#view interface#&gt; &lt;NSObject&gt;
+
+- (void)requestSuccess;
+- (void)requestFailure:(NSError *)error;
+- (void)startLoading;
+- (void)stopLoading;
+
+@end
+
+@protocol &lt;#presenter interface#&gt; &lt;NSObject&gt;
+
+- (instancetype)init __attribute__((unavailable("init is not available")));
+- (instancetype)initWithView:(id&lt;&lt;#view interface#&gt;&gt;)view;
+
+@end
+
+@interface &lt;#implementation#&gt;: NSObject&lt;&lt;#presenter interface#&gt;&gt;
+
+@end</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>7B558DE6-D992-482B-A6E3-C0EC46A81C42</string>
 	<key>IDECodeSnippetLanguage</key>

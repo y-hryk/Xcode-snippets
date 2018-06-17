@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>urlsession</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeExpression</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>let config = URLSessionConfiguration.default
+        let session = URLSession(configuration: config)
+        let url = URL(string: &lt;#string#&gt;)
+        
+        var req = URLRequest(url: url!)
+        req.httpMethod = "GET"
+        req.setValue("application/json", forHTTPHeaderField: "Accept")
+        // form params
+        //        req.httpBody = "test=1&amp;test=2".data(using: String.Encoding.utf8)
+        // json params
+        //        req.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        //        let params: [String: Any]  = [ "" : "", ]
+        //        req.httpBody = try! JSONSerialization.data(withJSONObject: params, options: [])
+        
+        session.dataTask(with: req) { (data, response, error) in
+            
+            if let data = data, let json = try? JSONSerialization.jsonObject(with: data, options: []) {
+                print(json)
+            }
+        }.resume()</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>C7021204-40AF-42BF-9BF7-20E0153AAD3C</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>urlsession_swift</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

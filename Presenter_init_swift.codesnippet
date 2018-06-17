@@ -3,28 +3,37 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>color</string>
+	<string>presenter</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>TopLevel</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>extension UIColor {
+	<string>protocol &lt;#view interface#&gt;: class {
+    func requestSuccess()
+    func requestFailure(error: Error)
+    func startLoading()
+    func stopLoading()
+}
+
+protocol &lt;#presenter interface#&gt; {
+    func viewDidLoad()
+}
+
+class &lt;#Implementation#&gt;: &lt;#presenter interface#&gt; {
     
-    class func RGBA(_ r : Int, _ g : Int, _ b : Int, _ alpha : CGFloat) -&gt; UIColor {
-        return UIColor(red: CGFloat(r) / 255.0, green: CGFloat(g) / 255.0, blue: CGFloat(b) / 255.0, alpha: CGFloat(alpha))
-    }
+    fileprivate weak var view: &lt;#view interface#&gt;?
     
-    class func RGB(_ r : Int, _ g : Int, _ b : Int) -&gt; UIColor {
-        return UIColor(red: CGFloat(r) / 255.0, green: CGFloat(g) / 255.0, blue: CGFloat(b) / 255.0, alpha: CGFloat(1.0))
+    init(view: &lt;#view interface#&gt;) {
+        self.view = view
     }
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>E92455CB-BE09-4092-BAA0-21EDCCAA65F2</string>
+	<string>27808FCF-A345-4290-B72D-9759E46B3195</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>UIColor_RGB_swift</string>
+	<string>presenter_init_swift</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

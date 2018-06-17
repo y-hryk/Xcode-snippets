@@ -3,22 +3,24 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>collectionview</string>
+	<string>navigationbar</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>CodeExpression</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>[_collectionView registerNib:[UINib nibWithNibName:&lt;#name#&gt; bundle:nil] forCellWithReuseIdentifier:&lt;#identifier#&gt;];</string>
+	<string>        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().barTintColor = UIColor.black
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>55502ECC-21ED-4268-96E2-0E52354FDC8A</string>
+	<string>54E2735D-76EC-424F-93E8-3983B0367A13</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>collectionview_registerNib_cell_objc</string>
+	<string>UINavigationBar_appearance_swift</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>0</integer>
+	<integer>2</integer>
 </dict>
 </plist>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>cardview</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>class CardView: UIView {
+
+    private var currentFrame: CGRect?
+    private var shadowLayer: CAShapeLayer?
+    
+    override var backgroundColor: UIColor? {
+        didSet {
+            self.shadowLayer?.fillColor = self.backgroundColor?.cgColor
+        }
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        if currentFrame != self.frame {
+            self.shadowLayer?.removeFromSuperlayer()
+            self.shadowLayer = nil
+        }
+        
+        if self.shadowLayer == nil {
+            self.shadowLayer = CAShapeLayer()
+            self.shadowLayer?.path = UIBezierPath(roundedRect: bounds, cornerRadius: self.layer.cornerRadius).cgPath
+            self.shadowLayer?.fillColor = self.backgroundColor?.cgColor
+            self.shadowLayer?.shadowColor = UIColor(white: 0.0, alpha: 0.35).cgColor
+            self.shadowLayer?.shadowPath = self.shadowLayer?.path
+            self.shadowLayer?.shadowOffset = CGSize(width: 0.0, height: 1.0)
+            self.shadowLayer?.shadowOpacity = 1.0
+            self.shadowLayer?.shadowRadius = 1.5
+            layer.insertSublayer(self.shadowLayer!, at: 0)
+        }
+        
+        self.currentFrame = self.frame
+    }
+
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>9B34DAF3-AD60-494D-BEEB-A7818FD3D5DD</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>cardview_swift</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

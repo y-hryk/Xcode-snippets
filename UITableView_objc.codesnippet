@@ -9,13 +9,19 @@
 		<string>CodeExpression</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>[_tableView registerNib:[UINib nibWithNibName:&lt;#name#&gt; bundle:nil]forCellReuseIdentifier:&lt;#identifier#&gt;];</string>
+	<string> _tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
+    _tableView.backgroundColor = [UIColor clearColor];
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _tableView.estimatedRowHeight = 100;
+    _tableView.rowHeight = UITableViewAutomaticDimension;
+    [_tableView registerNib:[UINib nibWithNibName:&lt;#name#&gt; bundle:nil]forCellReuseIdentifier:@"cell"];
+    [_tableView registerClass:[UITableView class] forCellReuseIdentifier:@"cell"];</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>19337E35-46CC-43EE-8FDE-14B86B402BD3</string>
+	<string>E38225B3-42BF-4217-AD95-CF245119E3BC</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>tableview_registerNib_cell_objc</string>
+	<string>UITableview_objc</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

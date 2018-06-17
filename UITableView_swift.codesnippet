@@ -9,10 +9,11 @@
 		<string>ClassImplementation</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>   private var tableView: UITableView = {
+	<string>    fileprivate var tableView: UITableView = {
         let view = UITableView(frame: .zero, style: .plain)
         view.backgroundColor = UIColor.clear
         view.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
+        view.register(UINib(nibName: "UITableViewCell", bundle: nil), forCellReuseIdentifier: "UITableViewCell")
         view.separatorStyle = .none
         view.estimatedRowHeight = 100;
         view.rowHeight = UITableViewAutomaticDimension;
@@ -23,10 +24,10 @@
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>tableview_swift</string>
+	<string>UITableview_swift</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>0</integer>
+	<integer>2</integer>
 </dict>
 </plist>

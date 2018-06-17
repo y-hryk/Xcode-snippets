@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>apiclient</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>enum HttpMethod {
+    case get, post, delete, put, patch
+    func string() -&gt; String {
+        switch self {
+        case .get: return "GET"
+        case .post: return "POST"
+        case .delete: return "DELETE"
+        case .put: return "PUT"
+        case .patch: return "PATCH"
+        }
+    }
+}
+
+protocol Request {
+    var method: HttpMethod { get }
+    var domain: String { get }
+    var path: String { get }
+    var query: String { get }
+    var paramters: [String: Any]? { get }
+    
+    associatedtype Response: Any
+    func convertJSONObject(_ object: AnyObject) -&gt; Response?
+}
+
+extension Request {
+    var query: String {
+        return ""
+    }
+    var paramters: [String: Any]? {
+        return nil
+    }
+}
+
+enum Response&lt;T&gt; {
+    case success(T)
+    case failure(Error)
+    
+    init(_ value: T) {
+        self = .success(value)
+    }
+    
+    init(_ error: Error) {
+        self = .failure(error)
+    }
+}
+
+class APIClient {
+    
+    func request&lt;T: Request&gt;(_ request: T, handler: @escaping (Response&lt;T.Response&gt;) -&gt; Void) {
+        
+        let URLString = request.domain + request.path + request.query
+        
+        let config = URLSessionConfiguration.default
+        let session = URLSession(configuration: config)
+        let url = URL(string: URLString)
+        
+        var req = URLRequest(url: url!)
+        req.httpMethod = request.method.string()
+        req.setValue("application/json", forHTTPHeaderField: "Accept")
+
+        session.dataTask(with: req) { (data, response, error) in
+            
+            if let data = data,
+                let json = try? JSONSerialization.jsonObject(with: data, options: []),
+                let model = request.convertJSONObject(json as AnyObject) {
+                DispatchQueue.main.async { handler(Response(model)) }
+                return
+            }
+            if let error = error {
+                DispatchQueue.main.async { handler(Response(error)) }
+                return
+            }
+            let userInfo = [NSLocalizedDescriptionKey: "unresolved error occurred."]
+            let error = NSError(domain: "WebAPIErrorDomain", code: 0, userInfo: userInfo)
+            DispatchQueue.main.async { handler(Response(error)) }
+        }.resume()
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>42E270C0-F530-4A5B-8A35-36FDD5434B09</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>APIClient_swift</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

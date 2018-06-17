@@ -3,21 +3,25 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>dispatch_global</string>
+	<string>flowlayout_photo</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>CodeExpression</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>  DispatchQueue.global(qos: .default).async {
-            
-        }</string>
+	<string>        let margin: CGFloat = 2.0
+        let flowlayout = UICollectionViewFlowLayout()
+        let width = (UIScreen.main.bounds.width - margin * 3) / 4
+        flowlayout.itemSize = CGSize(width: width, height: width)
+        flowlayout.minimumLineSpacing = margin
+        flowlayout.minimumInteritemSpacing = margin
+        flowlayout.sectionInset = UIEdgeInsets(top: margin, left: 0.0, bottom: margin, right: 0.0)</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>3BE79B6D-B941-4696-AFED-AB0452CB5DFD</string>
+	<string>20447760-29C8-4FA5-A9D2-F08DD1ECB9D6</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>dispatch_global_swift</string>
+	<string>flowlayout_photo_swift</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

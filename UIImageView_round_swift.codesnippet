@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>round_image</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>class RoundImageView: UIImageView {
+    
+    var radius: CGFloat = 0.0 {
+        didSet {
+            self.setNeedsLayout()
+        }
+    }
+    private var currentRadius: CGFloat = 0
+    private var currentFrame: CGRect?
+    private var maskLayer: CAShapeLayer?
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        if self.currentFrame != self.frame || self.currentRadius != self.radius  {
+            self.maskLayer?.removeFromSuperlayer()
+            self.maskLayer = nil
+        }
+        
+        if self.maskLayer == nil {
+            let maskPath = UIBezierPath(roundedRect: self.bounds,
+                                        byRoundingCorners: [.topLeft , .bottomLeft],
+                                        cornerRadii: CGSize(width: self.radius, height: self.radius))
+            self.maskLayer = CAShapeLayer()
+            self.maskLayer?.frame = self.bounds;
+            self.maskLayer?.path = maskPath.cgPath;
+            self.layer.mask = self.maskLayer;
+        }
+        
+        self.currentRadius = self.radius
+        self.currentFrame = self.frame
+    }
+
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>510F3153-4FBE-4BE1-8E86-876CF78B3D1D</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>round_imageview_swift</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

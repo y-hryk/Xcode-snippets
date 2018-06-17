@@ -3,35 +3,35 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>tableview</string>
+	<string>collectionview_datasource</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>TopLevel</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>extension &lt;#class#&gt;: UITableViewDataSource {
+	<string>extension &lt;#class#&gt;: UICollectionViewDataSource {
     
-    func numberOfSections(in tableView: UITableView) -&gt; Int {
+    func numberOfSections(in collectionView: UICollectionView) -&gt; Int {
         return 1
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -&gt; Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -&gt; Int {
         return 1
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt; UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -&gt; UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UICollectionViewCell", for: indexPath)
         cell.configure(with: &lt;#model#&gt;)
         return cell
     }
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>BC4AA164-D675-478F-8D6C-C6787EFB708E</string>
+	<string>4794C715-EA27-4213-8E0A-A1F4A06A5646</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>UITableview_datasorce_swift</string>
+	<string>UICollectionview_datasource_swift</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
