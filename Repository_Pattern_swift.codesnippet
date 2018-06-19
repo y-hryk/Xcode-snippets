@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>repository</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>protocol Repository {
+    
+    associatedtype Domain
+    func findAll() -&gt; [Domain]
+    func find(id: Int) -&gt; Domain?
+}
+
+struct AnyRepository&lt;DomainType&gt;: Repository {
+
+    typealias Domain = DomainType
+    private let _findAll: () -&gt; [DomainType]
+    private let _find: (Int) -&gt; DomainType?
+    
+    init&lt;T: Repository&gt;(_ repository: T) where T.Domain == DomainType {
+        _findAll = repository.findAll
+        _find = repository.find
+    }
+    
+    func findAll() -&gt; [DomainType] {
+        return _findAll()
+    }
+    
+    func find(id: Int) -&gt; DomainType? {
+        return _find(id)
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>505DCA44-1709-4A28-B04E-CB0AC95EF94B</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>repository_pattern_swift</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
