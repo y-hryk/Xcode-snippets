@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>pageviewcontroller</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>@interface &lt;#OnboardingPageViewController#&gt; () &lt;UIPageViewControllerDataSource, UIPageViewControllerDelegate&gt;
+
+@property (nonatomic, strong) UIPageViewController *pageViewController;
+@property (nonatomic, strong) NSMutableArray &lt;UIViewController*&gt;*viewControllers;
+
+@end
+
+@implementation &lt;#OnboardingPageViewController#&gt;
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    [self setupViews];
+}
+
+#pragma mark -- Private
+
+- (void)setupViews {
+    
+    self.pageViewController = [[UIPageViewController alloc]initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll
+                                                             navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+    
+    _pageViewController.dataSource = self;
+    _pageViewController.delegate = self;
+    [self addChildViewController:_pageViewController];
+    [self.view addSubview:_pageViewController.view];
+    [_pageViewController didMoveToParentViewController:self];
+    
+    
+    self.viewControllers = [@[&lt;#vc#&gt;, &lt;#vc#&gt;, &lt;#vc#&gt;] mutableCopy];
+    [self scrollToControllerIndex:0 animated:YES];
+}
+
+- (void)scrollToControllerIndex:(NSInteger)index animated:(BOOL)animated {
+    
+    [_pageViewController setViewControllers:@[_viewControllers[index]] direction:UIPageViewControllerNavigationDirectionForward animated:animated completion:nil];
+}
+
+- (UIViewController *)loadNextViewController:(UIViewController *)viewController isAfter:(BOOL)isAfter {
+    
+    NSInteger index = [_viewControllers indexOfObject:viewController];
+    
+    if (isAfter) {
+        index += 1;
+    } else {
+        index -= 1;
+    }
+    
+    if (index &gt;= 0 &amp;&amp; index &lt; _viewControllers.count) {
+        return _viewControllers[index];
+    }
+    return nil;
+}
+
+#pragma mark -- Public
+
+- (void)nextPage {
+    
+    NSInteger index = [_viewControllers indexOfObject:_pageViewController.viewControllers.firstObject];
+    NSInteger targetIndex = index + 1;
+    
+    if (targetIndex &gt; 0 &amp;&amp; targetIndex &lt;= (_viewControllers.count -1)) {
+        [self scrollToControllerIndex:targetIndex animated:YES];
+    }
+}
+
+- (void)lastPage {
+    NSInteger targetIndex = (_viewControllers.count - 1);
+    [self scrollToControllerIndex:targetIndex animated:YES];
+}
+
+#pragma mark -- UIPageViewControllerDataSource
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
+    return  [self loadNextViewController:viewController isAfter:YES];
+}
+
+
+- (nullable UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
+    return  [self loadNextViewController:viewController isAfter:NO];
+}
+
+#pragma mark -- UIPageViewControllerDelegate
+
+- (void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray&lt;UIViewController *&gt; *)pendingViewControllers {
+    
+}
+
+- (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray&lt;UIViewController *&gt; *)previousViewControllers transitionCompleted:(BOOL)completed {
+    
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B1C7AEE5-5F3A-4FF7-8680-18E739E7FD96</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>pageviewcontroller_objc</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
